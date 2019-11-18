@@ -44,14 +44,14 @@ Signed-off-by: Chuanhong Guo <gch981213@gmail.com>
  #define MT7621_CHIP_NAME1		0x20203132
 --- a/arch/mips/ralink/mt7621.c
 +++ b/arch/mips/ralink/mt7621.c
-@@ -15,6 +15,7 @@
+@@ -16,6 +16,7 @@
  #include <linux/clk-provider.h>
  #include <dt-bindings/clock/mt7621-clk.h>
  
 +#include <asm/bootinfo.h>
  #include <asm/mipsregs.h>
  #include <asm/smp-ops.h>
- #include <asm/mips-cps.h>
+ #include <asm/mips-cm.h>
 @@ -57,6 +58,8 @@
  #define MT7621_GPIO_MODE_SDHCI_SHIFT	18
  #define MT7621_GPIO_MODE_SDHCI_GPIO	1
@@ -61,7 +61,7 @@ Signed-off-by: Chuanhong Guo <gch981213@gmail.com>
  static struct rt2880_pmx_func uart1_grp[] =  { FUNC("uart1", 0, 1, 2) };
  static struct rt2880_pmx_func i2c_grp[] =  { FUNC("i2c", 0, 3, 2) };
  static struct rt2880_pmx_func uart3_grp[] = {
-@@ -141,6 +144,28 @@ static struct clk *__init mt7621_add_sys
+@@ -143,6 +146,28 @@ static struct clk *__init mt7621_add_sys
  	return clk;
  }
  
