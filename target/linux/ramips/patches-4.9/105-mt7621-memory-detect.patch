@@ -52,7 +52,7 @@ Signed-off-by: Chuanhong Guo <gch981213@gmail.com>
  #include <asm/mipsregs.h>
  #include <asm/smp-ops.h>
  #include <asm/mips-cm.h>
-@@ -57,6 +58,8 @@
+@@ -59,6 +60,8 @@
  #define MT7621_GPIO_MODE_SDHCI_SHIFT	18
  #define MT7621_GPIO_MODE_SDHCI_GPIO	1
  
@@ -90,7 +90,7 @@ Signed-off-by: Chuanhong Guo <gch981213@gmail.com>
  void __init ralink_clk_init(void)
  {
  	u32 syscfg, xtal_sel, clkcfg, clk_sel, curclk, ffiv, ffrac;
-@@ -319,10 +344,7 @@ void prom_soc_init(struct ralink_soc_inf
+@@ -299,10 +324,7 @@ void prom_soc_init(struct ralink_soc_inf
  		(rev >> CHIP_REV_VER_SHIFT) & CHIP_REV_VER_MASK,
  		(rev & CHIP_REV_ECO_MASK));
  
